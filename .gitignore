@@ -1,0 +1,12 @@
+/node_modules
+/app/frontend/libs
+/app/frontend/tmp
+/app/frontend/dist/
+/app/frontend/dist/css/
+/app/frontend/dist/js/
+/app/frontend/assets/gfx-c
+
+*.js
+!gulpfile.js
+
+.DS_Store

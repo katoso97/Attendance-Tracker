@@ -1,0 +1,12 @@
+<p>Welcome to the attendance!</p>
+<p id='todaysDate'>
+{{controller.currentDate}}
+</p>
+<form>
+  <div ng-repeat='student in controller.students'>
+    {{student.lastName}}, {{student.firstName}}<br>
+  <button ng-click='controller.isPresent(this.student)'>Present</button>
+  <button ng-click='controller.isAbsent(this.student)'>Absent</button>
+  </div>
+  <button class='button' ng-click='controller.saveAttendance()'>Submit</button>
+</form>

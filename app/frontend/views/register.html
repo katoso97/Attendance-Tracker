@@ -1,0 +1,43 @@
+<div class='registration container'>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Register</h1>
+    ----------------------------------------------------------------------
+
+    <form class="registerForm">
+
+    <table>
+      <tr>
+        <td><label for="firstName">First Name</label></td>
+        <td><input required type="text" ng-model='controller.newUser.firstName' placeholder="First Name" required="firstName"></td>
+      </tr>
+      <tr>
+        <td><label for="lastName">Last Name</label></td>
+        <td><input required type="text" ng-model='controller.newUser.lastName' placeholder="Last Name"></td>
+      </tr>
+      <tr>
+        <td><label for="email">Email</label></td>
+        <td><input required type="text" ng-model='controller.newUser.email' placeholder="Email"></td>
+      </tr>
+      <tr>
+        <td><label for="username">Username</label></td>
+        <td><input required minlength="6" type="text" ng-model='controller.newUser.username' placeholder="Username"></td>
+      </tr>
+      <tr>
+        <td><label for="password">Password</label></td>
+        <td><input required minlength="8" type="password" id='password' ng-model='controller.newUser.password' placeholder="Password"></td>
+      </tr>
+      <tr>
+        <td><label for="checkPassword">Re-enter your password</label></td>
+        <td><input required type="password" id='checkPassword' ng-model='controller.checkPassword' placeholder="Re-enter your password"></td>
+        <!-- <td ng-show='registerForm.password != registerForm.checkPassword'>Passwords must match</td> -->
+      </tr>
+      <tr>
+        <td><button class='btn btn-primary' ng-click='controller.createUser()'>Sign Up</button></td>
+      </tr>
+
+    </table>
+    </form>
+    </div>
+  </div>
+</div>

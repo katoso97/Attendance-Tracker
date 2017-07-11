@@ -1,0 +1,11 @@
+<h2>Display All Students</h2>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+  </tr>
+  <tr ng-repeat="student in controller.student" >
+    <td><img class="image" ng-src={{student.picture}} + height="100px" width="100px">{{student.name}}
+    </td>
+  </tr>
+</table>

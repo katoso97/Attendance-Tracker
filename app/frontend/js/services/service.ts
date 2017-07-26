@@ -7,10 +7,22 @@ namespace attendancetracker.Services {
     private ATTENDANCE_RESOURCE = this.$resource('/api/attendanceRecords/:id', null, {
       'update': { method: 'PUT'}
     });
+    public currentDate;
+    public year;
+    public month;
+    public day;
+    public months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     static $inject = ['$resource'];
 
-    constructor(private $resource) {}
+    constructor(private $resource) {
+      this.currentDate = new Date();
+      this.year = this.currentDate.getFullYear();
+      this.month = this.currentDate.getMonth();
+      this.month = this.months[this.month];
+      this.day = this.currentDate.getDate();
+      this.currentDate = `${this.year} ${this.month}, ${this.day}`;
+    }
 
     public getAllStudents() {
       return this.STUDENT_RESOURCE.query();
@@ -31,8 +43,9 @@ namespace attendancetracker.Services {
     public deleteStudent(id) {
       return this.STUDENT_RESOURCE.delete({id: id}).$promise;
     }
-    public addAttendance(studentArray){
-      return this.ATTENDANCE_RESOURCE.save(studentArray).$promise;
+
+    public createNewAttendanceSheet(attendanceSheet){
+      return this.ATTENDANCE_RESOURCE.save(attendanceSheet).$promise;
     }
   }
 

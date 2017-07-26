@@ -1,5 +1,6 @@
 import * as express from 'express';
 import AttendanceRecord from '../models/attendanceRecord';
+import Student from '../models/student';
 
 let router = express.Router();
 
@@ -23,10 +24,11 @@ router.get('/:id', (req, res) => {
   });
 });
 
-// add AttendanceRecord
+// add  new AttendanceRecord
 router.post('/', (req, res) => {
   let newAttendanceRecord = new AttendanceRecord();
-  newAttendanceRecord.attendance = req.body.attendance;
+  newAttendanceRecord.date = req.body.date;
+  newAttendanceRecord.students = req.body.students;
   newAttendanceRecord.save().then((newAttendanceRecord) => {
     res.json(newAttendanceRecord)
   }).catch((err) => {
@@ -34,11 +36,11 @@ router.post('/', (req, res) => {
   });
 });
 
-// update AttendanceRecord
-router.put('/:id', (req, res) => {
-  // let attendanceRecordId = req.params.id;
-  AttendanceRecord.findOne({_id: req.params.id}).then((attendanceRecord) => {
-
+// Add students to AttendanceRecord
+router.put('/:date', (req, res) => {
+  let attendanceRecordDate = req.params.date;
+  AttendanceRecord.findOne({_id: req.params.date}).then((attendanceRecord) => {
+    console.log(AttendanceRecord);
     attendanceRecord.save().then((updatedAttendanceRecord) => {
       res.json(updatedAttendanceRecord);
     }).catch((err) => {

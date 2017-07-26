@@ -21,8 +21,8 @@ mongoose.connect(CONNECTION_STRING).then(() => {
 
 let app = express();
 
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use(express.static('./app/frontend/'));
 

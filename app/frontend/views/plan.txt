@@ -2,6 +2,7 @@ need a way to check attendance of each student
 1. Needs to work for each individual and the entire classroom at the same time
 2. Must be able to be more or less efficient when taking attendance
 
+//works
 ideas: Move all students into an array, the array being a given day, and give
 each student a value of true or false on if they attended the given day. Create
 a table for each given day to see if someone was present on a given day. 7/10

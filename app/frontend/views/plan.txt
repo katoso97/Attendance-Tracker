@@ -1,7 +1,3 @@
-need a way to check attendance of each student
-1. Needs to work for each individual and the entire classroom at the same time
-2. Must be able to be more or less efficient when taking attendance
-
 //works
 ideas: Move all students into an array, the array being a given day, and give
 each student a value of true or false on if they attended the given day. Create
@@ -13,5 +9,16 @@ present. 5/10
 //wishlist
 different classes, assign kids to a different classroom
 link too google maps with address of parents
+pull up student record for the past 7 days
 //if possible
 Add way to upload student picture for attendance
+
+erick@creightoncommunityfoundation.org
+
+//Order of which features will be added
+1. add student phone number and parent address
+2. make attendance sheet using checkboxes (checkbox for present and absent)
+3.Create a delete method that moves student to unassigned class
+4.put contact information on separate column on the side
+5.sort students alphabetically and by absent/present status
+6.in page navigation to classes on the same page (single page application)

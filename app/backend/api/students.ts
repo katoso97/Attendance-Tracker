@@ -33,7 +33,9 @@ router.post('/', (req, res) => {
   newStudent.gradeLevel = req.body.gradeLevel;
   newStudent.parent = req.body.parent;
   newStudent.parentPhoneNumber = req.body.parentPhoneNumber;
+  newStudent.studentPhoneNumber = req.body.studentPhoneNumber;
   newStudent.address = req.body.address;
+  newStudent.attendInteract = req.body.attendInteract;
   newStudent.save().then((newStudent) => {
     res.json(newStudent)
   }).catch((err) => {

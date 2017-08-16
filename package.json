@@ -18,15 +18,16 @@
     "@types/mongoose": "^4.7.9",
     "@types/morgan": "^1.7.32",
     "@types/node": "^7.0.10",
+    "@types/opn": "^3.0.28",
     "@types/serve-favicon": "^2.2.28",
     "body-parser": "^1.17.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.2",
     "mongoose": "^4.9.1",
     "morgan": "^1.8.1",
-    "serve-favicon": "^2.4.2",
-    "@types/opn": "^3.0.28",
+    "nodemon": "^1.11.0",
     "opn": "^4.0.2",
+    "serve-favicon": "^2.4.2",
     "typescript": "^2.2.1"
   },
   "devDependencies": {

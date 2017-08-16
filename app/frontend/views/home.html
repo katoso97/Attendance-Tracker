@@ -5,8 +5,11 @@
 <form>
   <div ng-repeat='student in controller.students'>
     {{student.lastName}}, {{student.firstName}}<br>
-  <button ng-click='controller.isPresent(this.student)'>Present</button>
-  <button ng-click='controller.isAbsent(this.student)'>Absent</button>
+  <!-- <button ng-click='controller.isPresent(this.student)'>Present</button> -->
+  <!-- <button ng-click='controller.isAbsent(this.student)'>Absent</button> -->
+  <!-- <span>{{student}} -->
+  <label>Present: <input type="radio" name="isPresent" ng-click='controller.isPresent(this.student)' ></label>
+  <label>Absent: <input type="radio" name="isPresent" ng-click='controller.isAbsent(this.student)'></label>
   </div>
   <button class='button' ng-click='controller.saveAttendance()'>Submit</button>
 </form>

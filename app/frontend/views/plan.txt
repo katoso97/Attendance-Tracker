@@ -16,8 +16,8 @@ Add way to upload student picture for attendance
 erick@creightoncommunityfoundation.org
 
 //Order of which features will be added
-1. add student phone number and parent address
-2. make attendance sheet using checkboxes (checkbox for present and absent)
+1. add student phone number and parent address //1hr
+2. make attendance sheet using checkboxes (checkbox for present and absent) //1hr
 3.Create a delete method that moves student to unassigned class
 4.put contact information on separate column on the side
 5.sort students alphabetically and by absent/present status

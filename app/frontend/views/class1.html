@@ -1,30 +1,3 @@
-<h1>Class 1</h1>
-<h2 id='todaysDate'>
-{{controller.currentDate}}
-</h2>
-<table>
-  <tr>
-    <td>Jack O'neil</td>
-    <td>Present</td>
-  </tr>
-  <tr>
-    <td>Joana Resh</td>
-    <td>Absent</td>
-  </tr>
-  <tr>
-    <td>Carl Vallier</td>
-    <td>Absent</td>
-  </tr>
-  <tr>
-    <td>Jeff Boles</td>
-    <td>Present</td>
-  </tr>
-  <tr>
-    <td>Mark Whalburg</td>
-    <td>Absent</td>
-  </tr>
-  <tr>
-    <td>Billie Hollingsworth</td>
-    <td>Absent</td>
-  </tr>
-</table>
+<div ng-repeat='student in controller.students'>
+  {{student.firstName}}
+<div>

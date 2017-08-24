@@ -6,6 +6,7 @@ let router = express.Router();
 // get all students
 router.get('/', (req, res) => {
   Student.find().then((students) => {
+    console.log(students[0].firstName);
     res.json(students);
   }).catch((err) => {
     console.log(err);

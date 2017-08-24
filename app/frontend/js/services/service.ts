@@ -5,8 +5,10 @@ namespace attendancetracker.Services {
       'update': { method: 'PUT' }
     });
     private ATTENDANCE_RESOURCE = this.$resource('/api/attendanceRecords/:id', null, {
-      'update': { method: 'PUT'}
+      'update': { method: 'PUT'},
+      'query' : {method: 'GET', isArray:true}
     });
+    public students;
     public currentDate;
     public year;
     public month;
@@ -25,7 +27,7 @@ namespace attendancetracker.Services {
     }
 
     public getAllStudents() {
-      return this.STUDENT_RESOURCE.query();
+      return this.STUDENT_RESOURCE.query().$promise
     }
 
     public getStudentById(id) {

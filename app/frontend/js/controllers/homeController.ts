@@ -3,7 +3,7 @@ namespace attendancetracker.Controllers {
   export class HomeController {
     public clickedStudent;
     public student;
-    public students;
+    public students;;
     public currentDate;
     public year;
     public month;
@@ -11,13 +11,35 @@ namespace attendancetracker.Controllers {
     public studentArray = [];
     public months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-    static $inject = ['studentService', '$state', '$stateParams'];
+    static $inject = ['studentService', '$state', '$stateParams', '$window'];
 
-    constructor(private studentService, private $state, private $stateParams){
-      this.students = this.studentService.getAllStudents();
+    constructor(private studentService, private $state, private $stateParams, private $window){
+      this.studentService.getAllStudents().then((data) => {
+        this.students = data;
+        console.log(this.students)
+      }).then(() => {
+        this.students.sort(function(a, b){
+          if(a.lastName < b.lastName) return -1;
+          if(a.lastName > b.lastName) return 1;
+          return 0;
+        })
+        console.log(this.students);
+      })
+
+      //sorts alphabetically
+      // this.students = this.students.sort(this.compare);
+        // console.log(this.students);
+
+
       this.currentDate = this.studentService.currentDate;
       this.student = {lastName: "", firstName: "", isPresent:""}
+      // console.log(this.students);
+      // console.log(this.students.f);
+      // setTimeout(function(){
+      //   console.log(this.controller)
+      // }, 1000)
     }
+
 
     public isPresent(student){
     let currentStudent = {firstName: "", lastName: "",isPresent: ""};
@@ -63,5 +85,10 @@ namespace attendancetracker.Controllers {
         console.error(err)
       });
     }
-}
+    public sortArray(a, b){
+      if(a.lastName < b.lastName) return -1;
+      if(a.lastName > b.lastName) return 1;
+      return 0;
+    }
+  }
 }

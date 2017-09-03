@@ -1,4 +1,5 @@
 
   <div ng-repeat='student in controller.students'>
     {{student.lastName}}, {{student.firstName}}<br>
+    <button ng-click="controller.deleteStudent(this.student)">Remove</button>
   </div>

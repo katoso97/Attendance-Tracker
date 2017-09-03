@@ -25,5 +25,5 @@ erick@creightoncommunityfoundation.org
 had to refactor the service in order to make this bit of code work
 6.in page navigation to classes on the same page (single page application)
 TODO for 6: Set up regex for time slots (ex 10:45pm) //90 minutes
-Figure out how to change time to military time for easier sorting
+Figure out how to change time to military time for easier sorting //30mins
 Display time slots in descending order with all students

@@ -21,5 +21,9 @@ erick@creightoncommunityfoundation.org
 3a. Create different classes //30min so far
 3b.Create a delete method that moves student to unassigned class
 4.put contact information on separate column on the side
-5.sort students alphabetically and by absent/present status
+5.sort students alphabetically and by absent/present status //6hrs
+had to refactor the service in order to make this bit of code work
 6.in page navigation to classes on the same page (single page application)
+TODO for 6: Set up regex for time slots (ex 10:45pm) //90 minutes
+Figure out how to change time to military time for easier sorting
+Display time slots in descending order with all students

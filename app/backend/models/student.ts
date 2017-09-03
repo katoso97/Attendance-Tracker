@@ -4,7 +4,7 @@ export interface Student extends mongoose.Document {
   firstName: string;
   lastName: string;
   school: string;
-  birthday: number;
+  birthday: string;
   gradeLevel: string;
   parent: string;
   parentPhoneNumber: string;
@@ -27,7 +27,7 @@ let studentSchema = new mongoose.Schema({
     type: String
   },
   birthday: {
-    type: Number,
+    type: String,
     required: false
   },
   gradeLevel: {

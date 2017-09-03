@@ -1,14 +1,15 @@
 <form ng-submit='controller.addStudent()' name='addStudentForm'>
-  <input class="form-control" type="text" id='firstName' placeholder="First Name" required ng-model="controller.newStudent.firstName"><br>
-  <input class="form-control" type="text" id='lastName' placeholder="Last Name" required ng-model="controller.newStudent.lastName"><br>
-  <input class="form-control" type="text" id='school' placeholder="School Name" required ng-model="controller.newStudent.school"><br>
-  <input class="form-control" type="text" id='birthday' placeholder="Student Birthday" required ng-model="controller.newStudent.birthday"><br>
-  <input class="form-control" type="text" id='gradeLevel' placeholder="Grade" required ng-model="controller.newStudent.gradeLevel"><br>
-  <input class="form-control" type="text" id='parent' placeholder="Parent's name" required ng-model="controller.newStudent.parent"><br>
-  <input class="form-control" type="text" id='address' placeholder="Home Address" required ng-model="controller.newStudent.address"><br>
-  <input class="form-control" type="text" id='parentPhoneNumber' placeholder="Parent's phone number" required ng-model="controller.newStudent.parentPhoneNumber"><br>
-  <input class="form-control" type="text" id='studentPhoneNumber' placeholder="Student's phone number" required ng-model="controller.newStudent.studentPhoneNumber"><br>
-  <input class="form-control" type="text" id='studentClassTime' placeholder="Student Class Time" required ng-model="controller.newStudent.classTime"><br>
-  <input class="form-control" type="text" id='attendInteract' placeholder="Attend Interact?" required ng-model="controller.newStudent.attendInteract"><br>
-  <button>Add New Student!</button>
+  <input class="form-control" type="text" name='firstName' placeholder="First Name" required ng-model="controller.newStudent.firstName"><br>
+  <input class="form-control" type="text" name='lastName' placeholder="Last Name" required ng-model="controller.newStudent.lastName"><br>
+  <input class="form-control" type="text" name='school' placeholder="School Name" required ng-model="controller.newStudent.school"><br>
+  <input class="form-control" type="text" name='birthday' placeholder="Student Birthday" required ng-model="controller.newStudent.birthday"><br>
+  <input class="form-control" type="text" name='gradeLevel' placeholder="Grade" required ng-model="controller.newStudent.gradeLevel"><br>
+  <input class="form-control" type="text" name='parent' placeholder="Parent's name" required ng-model="controller.newStudent.parent"><br>
+  <input class="form-control" type="text" name='address' placeholder="Home Address" required ng-model="controller.newStudent.address"><br>
+  <input class="form-control" type="text" name='parentPhoneNumber' placeholder="Parent's phone number" required ng-model="controller.newStudent.parentPhoneNumber"><br>
+  <input class="form-control" type="text" name='studentPhoneNumber' placeholder="Student's phone number" required ng-model="controller.newStudent.studentPhoneNumber"><br>
+  <input class="form-control" type="text" name='studentClassTime' placeholder="Student Class Time" required ng-model="controller.newStudent.classTime" pattern='[0-9]{2}:[0-5]{1}[0-9]{1}[aApP][mM]'>
+  <span>Example for correct format for time is 02:45pm</span><br>
+  <input class="form-control" type="text" name='attendInteract' placeholder="Attend Interact?" required ng-model="controller.newStudent.attendInteract"><br>
+  <button ng-hide='addStudentForm.studentClassTime.$invalid || addStudentForm.firstName.$invalid || addStudentForm.lastName.$invalid'>Add New Student!</button>
 </form>

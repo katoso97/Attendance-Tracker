@@ -17,7 +17,8 @@ namespace attendancetracker.Controllers {
       this.studentService.getAllStudents().then((data) => {
         this.students = data;
         console.log(this.students)
-      }).then(() => {
+      })
+      .then(() => {
         this.students.sort(function(a, b){
           if(a.lastName < b.lastName) return -1;
           if(a.lastName > b.lastName) return 1;
@@ -71,10 +72,16 @@ namespace attendancetracker.Controllers {
 
     public saveAttendance(){
       let attendance = {date: this.currentDate, students: []};
+      this.studentArray.sort(function(a, b){
+        if(a.lastName < b.lastName) return -1;
+        if(a.lastName > b.lastName) return 1;
+        return 0;
+      })
       let studentArray = this.studentArray;
       for(var student in studentArray){
         attendance.students.push(studentArray[student]);
       }
+
       console.log(studentArray);
 
       return this.studentService.createNewAttendanceSheet(attendance)

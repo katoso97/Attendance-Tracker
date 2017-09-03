@@ -17,7 +17,7 @@ namespace attendancetracker.Controllers{
       newStudent.parent = this.newStudent.parent;
       newStudent.parentPhoneNumber = this.newStudent.parentPhoneNumber;
       newStudent.address = this.newStudent.address;
-      newStudent.classTime = this.newStudent.classTime;
+      newStudent.classTime = this.newStudent.classTime.toUpperCase();
       // newStudent.attendInteract = this.newStudent.attendInteract;
       return this.studentService.addStudent(newStudent)
       .then(() => console.log("added " + newStudent.firstName + " to the class!"))

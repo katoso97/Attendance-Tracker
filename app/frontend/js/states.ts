@@ -18,6 +18,12 @@ namespace attendancetracker {
               controller: attendancetracker.Controllers.AddStudentsController,
               controllerAs: 'controller'
             })
+            .state('attendance', {
+              url: '/attendance',
+              templateUrl: '/views/attendance.html',
+              controller: attendancetracker.Controllers.AttendanceController,
+              controllerAs: 'controller'
+            })
             .state('addAttendanceSheet', {
               url: '/addAttendanceSheet',
               templateUrl: '/views/addAttendanceSheet.html',

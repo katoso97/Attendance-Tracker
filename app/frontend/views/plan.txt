@@ -20,6 +20,7 @@ erick@creightoncommunityfoundation.org
 2. make attendance sheet using checkboxes (checkbox for present and absent) //1hr
 3a. Create different classes //30min so far
 3b.Create a delete method that moves student to unassigned class
+//created delete, did not move to separate class //30 mins
 4.put contact information on separate column on the side
 5.sort students alphabetically and by absent/present status //6hrs
 had to refactor the service in order to make this bit of code work

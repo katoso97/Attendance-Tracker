@@ -3,15 +3,12 @@ namespace attendancetracker.Controllers{
     public students;
     public times;
     public classes;
-    public x;
     public isReady = false;
 
     static $inject = ['studentService', '$state', '$window'];
 
     constructor(private studentService, private $state, private $window){
-      this.classes = [
-        {classTime: '', classStudents: [{}]}
-      ]
+      this.classes = [{classTime: '', classStudents: [{}]}]
       //Sort students by time
       this.studentService.getAllStudents().then((data) => {
         this.students = data;
@@ -25,28 +22,7 @@ namespace attendancetracker.Controllers{
         })
         this.isReady = true;
       })
-        //separating students by class time
-        while(this.x == 0){
-         if(this.isReady == true && this.students.$resolved == true){
-           for(let i = 8; i < 18; i++){
-             // sort through each student
-             if(this.students[i].classTime != this.students[i - 1].classTime){
-               this.x++
-             }
-             this.classes[this.x].classTime = this.students[i].classTime;
-             this.classes[this.x].classStudents.push(this.students[i])
-             // compare each classtime to the next. If they don't match, increase counting variable and push to new array in classes
-
-           }
-           console.dir(this.classes);
-         }
-        }
-        // this.x = 0;
-
-
-
-
-
+      //end of constructor
     }
     //delete studnet
     public deleteStudent(student){
@@ -55,7 +31,39 @@ namespace attendancetracker.Controllers{
         this.$window.location.reload();
       })
     }
+    public sortByTimePeriod(){
+      let x = 0;
+      this.classes[0].classTime = this.students[0].classTime;
+      this.classes[0].classStudents.push(this.students[0])
+      this.classes[0].classStudents.splice(0, 1);
+      // console.log(this.classes);
+      // console.log(this.classes[this.x])
+      // let classes = [{classTime: '', classStudents: [{}]}]
+      for(let i = 1; i < this.students.length; i++){
+        // sort through each student
+        if(this.students[i].classTime != this.classes[x].classTime){
+          x++
+          console.log("X was incremented " + x + " times");
+          this.classes.push({classTime: '', classStudents: [{}]})
+          this.classes[x].classStudents.pop();
+        }
+        this.classes[x].classTime = this.students[i].classTime;
+        this.classes[x].classStudents.push(this.students[i])
+
+        // compare each classtime to the next. If they don't match, increase counting variable and push to new array in classes
+
+      }
+      console.log(this.classes);
+    }
+    public goToEditPage(clickedStudentId){
+      return this.studentService.getStudentById(clickedStudentId).then((res) => {
+        console.log(res);
+        this.$window.localStorage.studentId = res._id;
+        this.$state.go('editStudent', {id: res._id})
+
+      });
+    }
 
 
-  }
+  }//end of controller
 }

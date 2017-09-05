@@ -8,7 +8,7 @@ namespace attendancetracker.Controllers{
 
       }
       public addStudent(){
-      let newStudent = {firstName: "", lastName: "", school: "", birthday:"", gradeLevel:"", parent:"", parentPhoneNumber:"", address:"", classTime:"", attendInteract:""};
+      let newStudent = {firstName: "", lastName: "", school: "", birthday:"", gradeLevel:"", parent:"", parentPhoneNumber:"", studentPhoneNumber: '', address:"", classTime:"", attendInteract:""};
       newStudent.firstName = this.newStudent.firstName;
       newStudent.lastName = this.newStudent.lastName;
       newStudent.school = this.newStudent.school;
@@ -16,6 +16,7 @@ namespace attendancetracker.Controllers{
       newStudent.gradeLevel = this.newStudent.gradeLevel;
       newStudent.parent = this.newStudent.parent;
       newStudent.parentPhoneNumber = this.newStudent.parentPhoneNumber;
+      newStudent.studentPhoneNumber = this.newStudent.studentPhoneNumber;
       newStudent.address = this.newStudent.address;
       newStudent.classTime = this.newStudent.classTime.toUpperCase();
       // newStudent.attendInteract = this.newStudent.attendInteract;

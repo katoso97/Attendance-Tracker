@@ -24,7 +24,8 @@ erick@creightoncommunityfoundation.org
 4.put contact information on separate column on the side
 5.sort students alphabetically and by absent/present status //6hrs
 had to refactor the service in order to make this bit of code work
-6.in page navigation to classes on the same page (single page application)
+6.in page navigation to classes on the same page (single page application)//4hrs
 TODO for 6: Set up regex for time slots (ex 10:45pm) //90 minutes
 Figure out how to change time to military time for easier sorting //30mins
-Display time slots in descending order with all students
+Display time slots in descending order with all students //1hr
+7. Update student data

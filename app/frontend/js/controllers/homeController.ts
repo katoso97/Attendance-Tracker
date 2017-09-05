@@ -24,7 +24,6 @@ namespace attendancetracker.Controllers {
           if(a.lastName > b.lastName) return 1;
           return 0;
         })
-        console.log(this.students);
       })
 
       //sorts alphabetically

@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 // get one student
 router.get('/:id', (req, res) => {
-  Student.findById(req.params.id).then ((student) => {
+  Student.findById(req.params.id).then((student) => {
     res.json(student);
   }).catch((err) => {
     console.log(err);

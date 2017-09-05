@@ -9,6 +9,7 @@ namespace attendancetracker.Services {
       'query' : {method: 'GET', isArray:true}
     });
     public students;
+    public studentBeingEdited;
     public currentDate;
     public year;
     public month;
@@ -31,7 +32,7 @@ namespace attendancetracker.Services {
     }
 
     public getStudentById(id) {
-      return this.STUDENT_RESOURCE.get({id: id});
+      return this.STUDENT_RESOURCE.get({id: id}).$promise;
     }
 
     public addStudent(student) {

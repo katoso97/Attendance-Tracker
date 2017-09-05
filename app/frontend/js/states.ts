@@ -45,7 +45,7 @@ namespace attendancetracker {
             .state('editStudent', {
               url: '/editStudent/:id',
               templateUrl: '/views/editStudent.html',
-              contrller: attendancetracker.Controllers.EditController,
+              controller: attendancetracker.Controllers.EditController,
               controllerAs: 'controller'
             })
             .state('studentView', {

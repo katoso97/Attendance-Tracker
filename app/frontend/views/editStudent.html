@@ -1,1 +1,15 @@
-hello
+<form ng-submit='controller.updateStudent()' name='updateStudentForm'>
+  <input class="form-control" type="text" name='firstName' required ng-model="controller.student.firstName">{{controller.student.firstName}}<br>
+  <input class="form-control" type="text" name='lastName' required ng-model="controller.student.lastName"><br>
+  <input class="form-control" type="text" name='school' required ng-model="controller.student.school"><br>
+  <input class="form-control" type="text" name='birthday' required ng-model="controller.student.birthday"><br>
+  <input class="form-control" type="text" name='gradeLevel' required ng-model="controller.student.gradeLevel"><br>
+  <input class="form-control" type="text" name='parent' required ng-model="controller.student.parent"><br>
+  <input class="form-control" type="text" name='address' required ng-model="controller.student.address"><br>
+  <input class="form-control" type="text" name='parentPhoneNumber' required ng-model="controller.student.parentPhoneNumber"><br>
+  <input class="form-control" type="text" name='studentPhoneNumber' placeholder="Student's phone number" required ng-model="controller.student.studentPhoneNumber"><br>
+  <input class="form-control" type="text" name='studentClassTime' placeholder="Student Class Time" required ng-model="controller.student.classTime" pattern='[0-9]{2}:[0-5]{1}[0-9]{1}[aApP][mM]'>
+  <span>Example for correct format for time is 02:45pm</span><br>
+  <input class="form-control" type="text" name='attendInteract' placeholder="Attend Interact?" required ng-model="controller.student.attendInteract"><br>
+  <button ng-hide='addStudentForm.studentClassTime.$invalid || addStudentForm.firstName.$invalid || addStudentForm.lastName.$invalid'>Update Student!</button>
+</form>

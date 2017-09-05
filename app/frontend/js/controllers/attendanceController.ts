@@ -53,15 +53,17 @@ namespace attendancetracker.Controllers{
         // compare each classtime to the next. If they don't match, increase counting variable and push to new array in classes
 
       }
-      console.log(this.classes);
     }
-    public goToEditPage(clickedStudentId){
-      return this.studentService.getStudentById(clickedStudentId).then((res) => {
-        console.log(res);
+    public goToEditPage(clickedStudent){
+      return this.studentService.getStudentById(clickedStudent._id).then((res) => {
+        this.saveStudent(clickedStudent);
         this.$window.localStorage.studentId = res._id;
         this.$state.go('editStudent', {id: res._id})
 
       });
+    }
+    public saveStudent(student){
+      this.studentService.studentBeingEdited = student;
     }
 
 

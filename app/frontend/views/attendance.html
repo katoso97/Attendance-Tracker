@@ -13,7 +13,7 @@
     <td>First</td>
     <td>Contact</td>
   </tr>
-  <tr ng-repeat='student in class.classStudents' ng-click="controller.goToEditPage(student._id)">
+  <tr ng-repeat='student in class.classStudents' ng-click="controller.goToEditPage(student)">
     <td>{{student.lastName}}</td>
     <td>{{student.firstName}}</td>
     <td>{{student.studentPhoneNumber}}</td>

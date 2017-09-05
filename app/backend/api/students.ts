@@ -41,7 +41,8 @@ router.post('/', (req, res) => {
   newStudent.save().then((newStudent) => {
     res.json(newStudent)
   }).catch((err) => {
-    res.json(err);
+    console.log(err);
+    res.status(400).json(err);
   });
 });
 

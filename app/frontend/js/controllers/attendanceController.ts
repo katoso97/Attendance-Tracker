@@ -71,6 +71,7 @@ namespace attendancetracker.Controllers{
       console.log(clickedClassTime);
       this.studentService.currentClass = this.classes[this.objectIndexOf(clickedClassTime)];
       console.log(this.studentService.currentClass)
+      this.$state.go('takeAttendance');
     }
     public objectIndexOf(chosenTime) {
     for (var i = 0; i < this.classes.length; i++) {

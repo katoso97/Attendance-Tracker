@@ -1,1 +1,8 @@
-{{controller.currentClass.classTime}}
+<form ng-repeat='student in controller.currentClass.classStudents'>
+  <div>
+    {{student.lastName}}, {{student.firstName}}<br>
+  <label>Present: <input type="radio" name="isPresent" ng-click='controller.isPresent(this.student)' ></label>
+  <label>Absent: <input type="radio" name="isPresent" ng-click='controller.isAbsent(this.student)'></label>
+  </div>
+</form>
+<button ng-click="controller.takeAttendance()">Test</button>

@@ -10,6 +10,8 @@ namespace attendancetracker.Services {
     });
     public students;
     public studentBeingEdited;
+    public classes;
+    public currentClass;
     public currentDate;
     public year;
     public month;

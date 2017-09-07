@@ -4,19 +4,20 @@
     <button ng-click="controller.deleteStudent(this.student)">Remove</button>
   </div>
 </div> -->
-<button ng-click="controller.sortByTimePeriod()">Sort</button>
+<button ng-click="controller.sortByTimePeriod()">Display Students</button>
 <div ng-repeat='class in controller.classes'>
-  <h2>{{class.classTime}}</h2>
+  <h2>{{class.classTime}}</h2><button ng-click="controller.displayClassForAttendance(class.classTime)">Attendance</button>
 <table>
   <tr>
     <td>Last</td>
     <td>First</td>
     <td>Contact</td>
   </tr>
-  <tr ng-repeat='student in class.classStudents' ng-click="controller.goToEditPage(student)">
+  <tr ng-repeat='student in class.classStudents'>
     <td>{{student.lastName}}</td>
     <td>{{student.firstName}}</td>
     <td>{{student.studentPhoneNumber}}</td>
+    <td><button ng-click="controller.goToEditPage(student)">Update</button></td>
   </tr>
 </table>
 </div>

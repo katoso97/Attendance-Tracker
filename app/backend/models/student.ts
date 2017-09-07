@@ -12,6 +12,11 @@ export interface Student extends mongoose.Document {
   address: string;
   classTime: string;
   attendInteract: string;
+  daysPresent:IDays[];
+  daysAbsent:IDays[];
+}
+interface IDays{
+  date: string;
 }
 
 let studentSchema = new mongoose.Schema({
@@ -55,8 +60,11 @@ let studentSchema = new mongoose.Schema({
     type: String,
     required: false
   },
-  present:{
-    type:String
+  daysPresent: {
+    type: Array
+  },
+  daysAbsent: {
+    type: Array
   }
 });
 

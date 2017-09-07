@@ -8,7 +8,7 @@ namespace attendancetracker.Controllers{
 
       }
       public addStudent(){
-      let newStudent = {firstName: "", lastName: "", school: "", birthday:"", gradeLevel:"", parent:"", parentPhoneNumber:"", studentPhoneNumber: '', address:"", classTime:"", attendInteract:""};
+      let newStudent = {firstName: "", lastName: "", school: "", birthday:"", gradeLevel:"", parent:"", parentPhoneNumber:"", studentPhoneNumber: '', address:"", classTime:"", attendInteract:"", daysPresent: [], daysAbsent: []};
       newStudent.firstName = this.newStudent.firstName;
       newStudent.lastName = this.newStudent.lastName;
       newStudent.school = this.newStudent.school;

@@ -54,6 +54,12 @@ namespace attendancetracker {
               controller: attendancetracker.Controllers.HomeController,
               controllerAs: 'controller'
             })
+            .state('takeAttendance', {
+              url: '/takeAttendance',
+              templateUrl: '/views/takeAttendance.html',
+              controller: attendancetracker.Controllers.TakeAttendanceController,
+              controllerAs: 'controller'
+            })
             // .state('register', {
             //     url: '/register',
             //     templateUrl: '/views/register.html',

@@ -53,6 +53,8 @@ namespace attendancetracker.Controllers{
         // compare each classtime to the next. If they don't match, increase counting variable and push to new array in classes
 
       }
+      this.studentService.classes = this.classes;
+      console.log(this.classes)
     }
     public goToEditPage(clickedStudent){
       return this.studentService.getStudentById(clickedStudent._id).then((res) => {
@@ -65,6 +67,19 @@ namespace attendancetracker.Controllers{
     public saveStudent(student){
       this.studentService.studentBeingEdited = student;
     }
+    public displayClassForAttendance(clickedClassTime){
+      console.log(clickedClassTime);
+      this.studentService.currentClass = this.classes[this.objectIndexOf(clickedClassTime)];
+      console.log(this.studentService.currentClass)
+    }
+    public objectIndexOf(chosenTime) {
+    for (var i = 0; i < this.classes.length; i++) {
+        if (this.classes[i].classTime == chosenTime) {
+            return i;
+        }
+    }
+    return -1;
+}
 
 
   }//end of controller

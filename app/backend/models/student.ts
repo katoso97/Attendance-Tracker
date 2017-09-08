@@ -12,14 +12,24 @@ export interface Student extends mongoose.Document {
   address: string;
   classTime: string;
   attendInteract: string;
-  attendanceRecord: IDays[]
+  attendanceRecord: object[]
 }
-interface IDays extends mongoose.Document{
-  day: {
-    date: string,
-    status: string
+// interface IDays extends mongo ose.Document{
+//   day: {
+//     date: string,
+//     status: string
+//   }
+// }
+let daySchema = new mongoose.Schema({
+  date: {
+    type: String,
+    required: true
+  },
+  status: {
+    type: String,
+    required: true
   }
-}
+})
 
 let studentSchema = new mongoose.Schema({
   firstName: {
@@ -66,5 +76,5 @@ let studentSchema = new mongoose.Schema({
     type: Array
   }
 });
-
+// export mongoose.model<IDays>('IDays', daySchema)
 export default mongoose.model<Student>('Student', studentSchema);

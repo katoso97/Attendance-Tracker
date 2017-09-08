@@ -24,7 +24,7 @@ namespace attendancetracker.Controllers{
       })
       //end of constructor
     }
-    //delete studnet
+    //delete student
     public deleteStudent(student){
       return this.studentService.deleteStudent(student._id).then(() => {
         console.log("Deleted " + student.firstName + ' ' + student.lastName + " from classTime" + student.classTime);
@@ -43,7 +43,6 @@ namespace attendancetracker.Controllers{
         // sort through each student
         if(this.students[i].classTime != this.classes[x].classTime){
           x++
-          console.log("X was incremented " + x + " times");
           this.classes.push({classTime: '', classStudents: [{}]})
           this.classes[x].classStudents.pop();
         }
@@ -58,14 +57,17 @@ namespace attendancetracker.Controllers{
     }
     public goToEditPage(clickedStudent){
       return this.studentService.getStudentById(clickedStudent._id).then((res) => {
-        this.saveStudent(clickedStudent);
-        this.$window.localStorage.studentId = res._id;
+        this.studentService.studentBeingEdited = clickedStudent;
         this.$state.go('editStudent', {id: res._id})
 
       });
     }
-    public saveStudent(student){
-      this.studentService.studentBeingEdited = student;
+    public goToStudentAttendanceRecordPage(clickedStudent){
+      return this.studentService.getStudentById(clickedStudent._id).then((res) => {
+        this.studentService.studentBeingViewed = clickedStudent;
+        this.$state.go('studentView', {id: res._id})
+
+      });
     }
     public displayClassForAttendance(clickedClassTime){
       console.log(clickedClassTime);

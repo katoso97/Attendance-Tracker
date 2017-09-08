@@ -38,7 +38,7 @@ router.post('/', (req, res) => {
   newStudent.address = req.body.address;
   newStudent.classTime = req.body.classTime;
   newStudent.attendInteract = req.body.attendInteract;
-  newStudent.attendanceRecord = [];
+  newStudent.attendanceRecord = req.body.attendanceRecord;
   newStudent.save().then((newStudent) => {
     res.json(newStudent)
   }).catch((err) => {

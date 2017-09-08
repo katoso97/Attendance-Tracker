@@ -1,7 +1,7 @@
 <!-- <div>
   <div ng-repeat='student in controller.students'>
     {{student.lastName}}, {{student.firstName}}<br>
-    <button ng-click="controller.deleteStudent(this.student)">Remove</button>
+
   </div>
 </div> -->
 <button ng-click="controller.sortByTimePeriod()">Display Students</button>
@@ -18,6 +18,9 @@
     <td>{{student.firstName}}</td>
     <td>{{student.studentPhoneNumber}}</td>
     <td><button ng-click="controller.goToEditPage(student)">Update</button></td>
+    <td><button ng-click="controller.goToStudentAttendanceRecordPage(student)">View Attendance</button></td>
+    <!-- optional place for delete -->
+    <!-- <td><button ng-click="controller.deleteStudent(this.student)">Remove</button></td> -->
   </tr>
 </table>
 </div>

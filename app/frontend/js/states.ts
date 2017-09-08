@@ -24,24 +24,12 @@ namespace attendancetracker {
               controller: attendancetracker.Controllers.AttendanceController,
               controllerAs: 'controller'
             })
-            .state('addAttendanceSheet', {
-              url: '/addAttendanceSheet',
-              templateUrl: '/views/addAttendanceSheet.html',
-              controller: attendancetracker.Controllers.AddAttendanceSheetController,
-              controllerAs: 'controller'
-            })
-            .state('class1', {
-              url: '/class1',
-              templateUrl: '/views/class1.html',
-              controller: attendancetracker.Controllers.HomeController,
-              controllerAs: 'controller'
-            })
-            .state('class2', {
-              url: '/class2',
-              templateUrl: '/views/class2.html',
-              controller: attendancetracker.Controllers.HomeController,
-              controllerAs: 'controller'
-            })
+            // .state('addAttendanceSheet', {
+            //   url: '/addAttendanceSheet',
+            //   templateUrl: '/views/addAttendanceSheet.html',
+            //   controller: attendancetracker.Controllers.AddAttendanceSheetController,
+            //   controllerAs: 'controller'
+            // })
             .state('editStudent', {
               url: '/editStudent/:id',
               templateUrl: '/views/editStudent.html',
@@ -49,9 +37,9 @@ namespace attendancetracker {
               controllerAs: 'controller'
             })
             .state('studentView', {
-              url: '/studentView',
+              url: '/studentView/:id',
               templateUrl: '/views/studentAttendanceRecord.html',
-              controller: attendancetracker.Controllers.HomeController,
+              controller: attendancetracker.Controllers.AttendanceRecordController,
               controllerAs: 'controller'
             })
             .state('takeAttendance', {

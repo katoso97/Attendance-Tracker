@@ -57,27 +57,8 @@ namespace attendancetracker.Controllers{
       return this.studentService.updateStudent(currentStudent._id, currentStudent);
     }
 
-    // public takeAttendance(){
-    //   let attendance = {date: this.currentDate, students: []};
-    //   this.studentArray.sort(function(a, b){
-    //     if(a.lastName < b.lastName) return -1;
-    //     if(a.lastName > b.lastName) return 1;
-    //     return 0;
-    //   })
-    //   let studentArray = this.studentArray;
-    //   for(var student in studentArray){
-    //     attendance.students.push(studentArray[student]);
-    //   }
-    //
-    //   console.log(studentArray);
-    //
-    //   return this.studentService.createNewAttendanceSheet(attendance)
-    //   .then(() => {
-    //     console.log(attendance)
-    //   })
-    //   .catch((err) => {
-    //     console.error(err)
-    //   });
-    // }
+    public takeAttendance(){
+      this.$state.go('attendance');
+    }
   }
 }

@@ -4,6 +4,7 @@ namespace attendancetracker.Controllers{
     public times;
     public classes;
     public isReady = false;
+    public displayingStudents = false;
 
     static $inject = ['studentService', '$state', '$window'];
 
@@ -54,6 +55,7 @@ namespace attendancetracker.Controllers{
       }
       this.studentService.classes = this.classes;
       console.log(this.classes)
+      this.displayingStudents = true;
     }
     public goToEditPage(clickedStudent){
       return this.studentService.getStudentById(clickedStudent._id).then((res) => {

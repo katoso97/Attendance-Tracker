@@ -25,6 +25,9 @@ namespace attendancetracker.Controllers{
       updatedStudent.address = this.student.address;
       updatedStudent.classTime = this.student.classTime.toUpperCase();
       return this.studentService.updateStudent(this.student._id, updatedStudent)
+      .then(() => {
+        this.$state.go('attendance');
+      })
     }
   }
 }

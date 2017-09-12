@@ -1,12 +1,6 @@
-<!-- <div>
-  <div ng-repeat='student in controller.students'>
-    {{student.lastName}}, {{student.firstName}}<br>
-
-  </div>
-</div> -->
 <button ng-click="controller.sortByTimePeriod()">Display Students</button>
 <div ng-repeat='class in controller.classes'>
-  <h2>{{class.classTime}}</h2><button ng-click="controller.displayClassForAttendance(class.classTime)">Attendance</button>
+  <h2>{{class.classTime}}</h2><button ng-if="controller.displayingStudents == true" ng-click="controller.displayClassForAttendance(class.classTime)">Take Attendance</button>
 <table>
   <tr>
     <td>Last</td>

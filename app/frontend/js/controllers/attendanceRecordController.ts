@@ -2,6 +2,7 @@ namespace attendancetracker.Controllers{
   export class AttendanceRecordController{
     public student;
     public daysArray;
+    public currentDate;
 
 
     static $inject = ['studentService', '$state', '$stateParams'];
@@ -9,11 +10,7 @@ namespace attendancetracker.Controllers{
     constructor(private studentService, private $state, private $stateParams){
       this.student = this.studentService.studentBeingViewed;
       this.daysArray = this.student.attendanceRecord;
-    }
-
-    public test(){
-      console.log(this.student);
-      console.log(this.daysArray);
+      this.currentDate = this.studentService.currentDate;
     }
   }
 

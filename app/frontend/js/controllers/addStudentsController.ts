@@ -2,9 +2,9 @@ namespace attendancetracker.Controllers{
   export class AddStudentsController{
       public newStudent;
 
-      static $inject = ['studentService', '$state', '$stateParams'];
+      static $inject = ['studentService', '$state', '$stateParams', '$window'];
 
-      constructor(private studentService, private $state, private $stateParams){
+      constructor(private studentService, private $state, private $stateParams, private $window){
 
       }
       public addStudent(){
@@ -24,8 +24,8 @@ namespace attendancetracker.Controllers{
 
       newStudent.attendInteract = this.newStudent.attendInteract;
       return this.studentService.addStudent(newStudent)
-      .then(() => console.log("added " + newStudent.firstName + " to the class!"))
-      .catch((err) => console.error(err));
-    }
+      .then(() => this.$window.location.reload())
+      .catch((err) => console.error(err))
   }
+}
 }

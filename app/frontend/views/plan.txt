@@ -29,9 +29,9 @@ TODO for 6: Set up regex for time slots (ex 10:45pm) //90 minutes
 Figure out how to change time to military time for easier sorting //30mins
 Display time slots in descending order with all students //1hr
 7. Update student data //2 hrs
-8. click on class to take attendance
+8. click on class to take attendance //2hrs
 //new plan
-0. Fix all current bugs
+0. Fix all current bugs //15 min
 1. Create jeffs table //check phone for image
 2. If student is "Yes" for interact, add to interact page
 2a. Create page (named "club") that shows all students in Interact

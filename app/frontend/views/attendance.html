@@ -18,3 +18,14 @@
   </tr>
 </table>
 </div>
+
+<table>
+<tr>
+  <td>Name</td>
+  <td>Date Attended</td>
+</tr>
+<tr ng-repeat='student in controller.class.classStudents'>
+  <td>{{student.lastName}}, {{student.firstName}}</td>
+  <!-- <td ng-repeat='date in student.attendanceRecord'>{{}} -->
+</tr>
+</table>

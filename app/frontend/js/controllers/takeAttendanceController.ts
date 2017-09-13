@@ -28,8 +28,20 @@ namespace attendancetracker.Controllers{
       else{
       currentStudent.attendanceRecord.push({date: this.currentDate, status: "present"})
       }
+      //delete initial data
       if(currentStudent.attendanceRecord[0].date == "" && currentStudent.attendanceRecord[0].status == ""){
         currentStudent.attendanceRecord.splice(0, 1);
+      }
+      //check days present
+      let secondArrayLength = currentStudent.daysPresent.length;
+      if(currentStudent.daysPresent[secondArrayLength - 1].date == this.currentDate){
+        //do nothing
+      } else{
+        currentStudent.daysPresent.push({date: this.currentDate});
+      }
+      //delete initial data
+      if(currentStudent.daysPresent[0].date == ""){
+        currentStudent.daysPresent.splice(0, 1);
       }
       return this.studentService.updateStudent(currentStudent._id, currentStudent);
     }
@@ -51,8 +63,16 @@ namespace attendancetracker.Controllers{
         else{
         currentStudent.attendanceRecord.push({date: this.currentDate, status: "absent"})
         }
+        //delete initial data
         if(currentStudent.attendanceRecord[0].date == "" && currentStudent.attendanceRecord[0].status == ""){
           currentStudent.attendanceRecord.splice(0, 1);
+        }
+        //check days present
+        let secondArrayLength = currentStudent.daysPresent.length;
+        if(currentStudent.daysPresent[secondArrayLength - 1].date == this.currentDate){
+          currentStudent.daysPresent.splice(secondArrayLength - 1, 1)
+        } else{
+          //do nothing
         }
       return this.studentService.updateStudent(currentStudent._id, currentStudent);
     }

@@ -12,7 +12,8 @@ export interface Student extends mongoose.Document {
   address: string;
   classTime: string;
   attendInteract: string;
-  attendanceRecord: object[]
+  attendanceRecord: object[];
+  daysPresent: object[];
 }
 // interface IDays extends mongo ose.Document{
 //   day: {
@@ -73,6 +74,9 @@ let studentSchema = new mongoose.Schema({
     required: false
   },
   attendanceRecord: {
+    type: Array
+  },
+  daysPresent: {
     type: Array
   }
 });

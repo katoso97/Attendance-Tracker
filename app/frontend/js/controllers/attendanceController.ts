@@ -57,6 +57,7 @@ namespace attendancetracker.Controllers{
       console.log(this.classes)
       this.displayingStudents = true;
     }
+
     public goToEditPage(clickedStudent){
       return this.studentService.getStudentById(clickedStudent._id).then((res) => {
         this.studentService.studentBeingEdited = clickedStudent;
